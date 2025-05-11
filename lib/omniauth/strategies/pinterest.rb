@@ -27,7 +27,7 @@ module OmniAuth
       end
 
       def ssl?
-        true
+        request.scheme == 'https'
       end
 
       # You can pass +display+, +scope+, or +auth_type+ params to the auth request, if you need to set them dynamically.
