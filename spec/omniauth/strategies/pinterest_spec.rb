@@ -1,0 +1,25 @@
+require 'spec_helper'
+
+describe OmniAuth::Strategies::Pinterest do
+  context 'client options' do
+    subject { OmniAuth::Strategies::Pinterest.new({}) }
+
+    it 'should have correct site' do
+      subject.options.client_options.site.should eq(
+                                                   'https://api.pinterest.com/',
+                                                 )
+    end
+
+    it 'should have correct authorize url' do
+      subject.options.client_options.authorize_url.should eq(
+                                                            'https://pinterest.com/oauth/',
+                                                          )
+    end
+
+    it 'should have correct token url' do
+      subject.options.client_options.token_url.should eq(
+                                                        'https://api.pinterest.com/v5/oauth/token',
+                                                      )
+    end
+  end
+end
